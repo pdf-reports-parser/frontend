@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "PDF-Parser-Frontend"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Vinnikov <vinnpavel@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.0.3"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.942"
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
