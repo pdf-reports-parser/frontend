@@ -1,5 +1,3 @@
-import httpx
-
 from frontend.schemas import Measurements
 
 

@@ -9,4 +9,3 @@ def create_app():
     app.register_blueprint(index.view)
 
     return app
-
