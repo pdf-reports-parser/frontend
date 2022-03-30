@@ -1,6 +1,6 @@
 from flask import Flask
 
-from frontend.view import index
+from frontend.views import index
 
 
 def create_app():

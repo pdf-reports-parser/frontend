@@ -4,17 +4,17 @@ from pydantic import BaseModel
 
 
 class AppConfig(BaseModel):
-    endpoint: str
-    host: str
-    port: str
+    backend_url: str
+    app_host: str
+    app_port: str
 
 
 def load_from_env() -> AppConfig:
-    endpoint = os.environ['ENDPOINT']
-    host = os.environ['HOST']
-    port = os.environ['PORT']
+    backend_url = os.environ['BACKEND_URL']
+    app_host = os.environ['APP_HOST']
+    app_port = os.environ['APP_PORT']
     return AppConfig(
-        endpoint=endpoint,
-        host=host,
-        port=port,
+        backend_url=backend_url,
+        app_host=app_host,
+        app_port=app_port,
     )

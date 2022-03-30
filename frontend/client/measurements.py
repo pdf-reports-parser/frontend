@@ -1,3 +1,4 @@
+from frontend import config
 from frontend.schemas import Measurements
 
 
@@ -39,10 +40,12 @@ fake_measurements = [
     },
 ]
 
+app_config = config.load_from_env()
+
 
 class MeasurementsClient:
 
-    def __init__(self, url):
+    def __init__(self, url=app_config.backend_url):
         self.url = f'{url}/measurements'
 
     def get_all(self):
