@@ -1,15 +1,19 @@
-<head>
-
-</head>
-<body>
-
-<h1>
-    Hello World!
-</h1>
-{% for measurement in measurements %}
-<li>
-    <h3>
-        {{ measurement. }}
-    </h3>
-</li>
-</body>
+<html>
+    <head>
+    <title>PDF-pars</title>
+    </head>
+    <body>
+    <form enctype="multipart/form-data" method="post">
+        <p>Загрузите отчет на сервер</p>
+        <p><input type="file" name="file">
+        <input type="submit" value="Отправить"></p>
+    </form>
+    <h1>
+        Measurement reports
+    </h1>
+    {% for measurement in measurements %}
+        <li>Measurement_object - {{ measurement.measurement_object }}. Country - {{ measurement.project}}. Report date - {{ measurement.report_date }}. Responsible person - {{ measurement.responsible_person}}
+        </li>
+    {% endfor %}
+    </body>
+</html>
