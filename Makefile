@@ -5,8 +5,8 @@ dev.install:
 	@poetry install
 
 lint:
-	@mypy service
-	@flake8 service
+	@mypy frontend
+	@flake8 frontend
 
 run:
 	@python -m frontend
