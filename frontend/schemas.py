@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 class Measurements(BaseModel):
 
+    uid: int
     measurement_object: str
     project: str
     report_date: datetime
