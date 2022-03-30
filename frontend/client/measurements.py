@@ -3,12 +3,14 @@ import httpx
 from frontend.schemas import Measurements
 
 
-fake_measurements = {
-    "measurement_object": "Cherry Tiggo sert",
-    "project": "КИТАЙ",
-    "report_date": "Mon, 13 Dec 2021 15:29:00 GMT",
-    "responsible_person": "user"
-}
+fake_measurements = [
+    {
+        "measurement_object": "Cherry Tiggo sert",
+        "project": "КИТАЙ",
+        "report_date": "2032-04-23T10:20:30",
+        "responsible_person": "user"
+    },
+]
 
 
 class MeasurementsClient:
