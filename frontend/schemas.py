@@ -5,8 +5,6 @@ from pydantic import BaseModel
 
 class Measurements(BaseModel):
 
-    uid: int
-    measurement_object: str
-    project: str
-    report_date: datetime
-    responsible_person: str
+    uid: str
+    name: str
+    data: str
