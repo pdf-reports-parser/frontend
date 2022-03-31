@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template
 
-from frontend import measurements_client
+from frontend.client.measurements import MeasurementsClient
 
 view = Blueprint('index', __name__)
+measurements_client = MeasurementsClient()
 
 
 @view.route('/')
