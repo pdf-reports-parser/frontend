@@ -12,7 +12,7 @@
         Measurement reports
     </h1>
     {% for measurement in measurements %}
-        <li>Measurement_name - {{ measurement.name }}. Data - {{ measurement.data}}
+        <li>Measurement_object - {{ measurement.measurement_object }}. Project - {{ measurement.project }}. Report_date - {{ measurement.report_date }}. Responsible_person - {{ measurement.responsible_person }}.
         </li>
     {% endfor %}
     </body>
