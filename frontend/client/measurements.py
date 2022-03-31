@@ -1,7 +1,7 @@
 import httpx
 
 from frontend import config
-from frontend.schemas import Measurements
+from frontend.schemas import Measurement
 
 app_config = config.load_from_env()
 
@@ -14,4 +14,4 @@ class MeasurementsClient:
     def get_all(self):
         back_query = httpx.get(f'{self.url}/')
         measurements = back_query.json()
-        return [Measurements(**measurement) for measurement in measurements]
+        return [Measurement(**measurement) for measurement in measurements]
