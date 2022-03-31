@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Measurements(BaseModel):
+class Measurement(BaseModel):
 
     uid: str
     name: str
