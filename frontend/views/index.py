@@ -1,16 +1,15 @@
 from flask import Blueprint, render_template
 
-from frontend.client.measurements import MeasurementsClient
+from frontend.client.measurements import client
 
 view = Blueprint('index', __name__)
-measurements_client = MeasurementsClient()
 
 
 @view.route('/')
 def index():
-    all_measurements = measurements_client.get_all()
+    measurements = client.get_all()
 
     return render_template(
         'index.html',
-        measurements=[measurement.dict() for measurement in all_measurements],
+        measurements=[measurement.dict() for measurement in measurements],
     )
