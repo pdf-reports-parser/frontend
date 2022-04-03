@@ -9,9 +9,9 @@
         </form>
         <h1>Measurement reports</h1>
         {% for measurement in measurements %}
-        <li>
+        <li><a href="{{ url_for('measurements.measurements', uid=measurement.uid) }}">
             {{ measurement.uid }} {{ measurement.project }} - {{ measurement.subject }} [{{ measurement.date }}] <{{
-            measurement.responsible }}>
+            measurement.responsible }}></a>
         </li>
         {% endfor %}
     </body>
