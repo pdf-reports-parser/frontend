@@ -3,14 +3,14 @@
         <title>PDF-pars</title>
     </head>
     <body>
-        <form enctype="multipart/form-data" method="post">
+        <form action="{{ url_for('index.upload') }}" enctype="multipart/form-data" method="post">
             <p>Загрузите отчет на сервер</p>
             <p><input type="file" name="file" /> <input type="submit" value="Отправить" /></p>
         </form>
         <h1>Measurement reports</h1>
         {% for measurement in measurements %}
         <li>
-            {{ measurement.project }} - {{ measurement.subject }} [{{ measurement.date }}] <{{
+            {{ measurement.uid }} {{ measurement.project }} - {{ measurement.subject }} [{{ measurement.date }}] <{{
             measurement.responsible }}>
         </li>
         {% endfor %}

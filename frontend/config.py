@@ -3,6 +3,8 @@ import os
 from pydantic import BaseModel
 
 
+SECRET_KEY = 'HILUhik46846gfhbfgn6584968'
+
 class AppConfig(BaseModel):
     backend_url: str
     app_host: str
