@@ -1,7 +1,6 @@
 import httpx
 from flask import Blueprint, flash, render_template, redirect, request, url_for
 
-from frontend.config import config
 from frontend.client.measurements import client
 
 view = Blueprint('index', __name__)
