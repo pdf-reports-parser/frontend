@@ -1,7 +1,7 @@
 import httpx
-from flask import Blueprint, flash, render_template, redirect, request, url_for
+from flask import Blueprint, flash, render_template, redirect, url_for
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField, FileRequired
+from flask_wtf.file import FileField
 from werkzeug.utils import secure_filename
 
 
