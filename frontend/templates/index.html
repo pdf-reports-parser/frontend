@@ -7,7 +7,7 @@
         {{ form.hidden_tag() }}
         <form action="{{ url_for('index.index') }}" enctype="multipart/form-data" method="post">
             <p>Загрузите отчет на сервер</p>
-            {{ form.pdf_report }}
+            {{ form.file }}
             <p><input type="submit" value="Отправить" /></p>
         </form>
         {% endblock %}
