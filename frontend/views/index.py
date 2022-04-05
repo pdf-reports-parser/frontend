@@ -12,8 +12,8 @@ def index():
     form = FileForm(meta={'csrf': False})
 
     if form.validate_on_submit():
-        if form.upload_file():
-            return redirect(url_for('index.index'))
+        form.upload_file()
+        return redirect(url_for('index.index'))
 
     return render_template(
         'index.html',
