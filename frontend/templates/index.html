@@ -3,15 +3,19 @@
         <title>PDF-pars</title>
     </head>
     <body>
-        <form enctype="multipart/form-data" method="post">
+        {% block content %}
+        {{ form.hidden_tag() }}
+        <form action="{{ url_for('index.index') }}" enctype="multipart/form-data" method="post">
             <p>Загрузите отчет на сервер</p>
-            <p><input type="file" name="file" /> <input type="submit" value="Отправить" /></p>
+            {{ form.file }}
+            <p><input type="submit" value="Отправить" /></p>
         </form>
+        {% endblock %}
         <h1>Measurement reports</h1>
         {% for measurement in measurements %}
-        <li>
-            {{ measurement.project }} - {{ measurement.subject }} [{{ measurement.date }}] <{{
-            measurement.responsible }}>
+        <li><a href="{{ url_for('measurements.measurements', uid=measurement.uid) }}">
+            {{ measurement.uid }} {{ measurement.project }} - {{ measurement.subject }} [{{ measurement.date }}] <{{
+            measurement.responsible }}></a>
         </li>
         {% endfor %}
     </body>
