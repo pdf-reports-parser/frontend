@@ -32,22 +32,14 @@
             <div class="col-sm-15">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="{{ url_for('measurements.measurements', uid=measurement.uid) }}" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">{{ measurement.project }}</h5>
+                        <p class="card-text">{{ measurement.subject }} [{{ measurement.date }}] <{{measurement.responsible }}></p>
+                        <a href="{{ url_for('measurements.measurements', uid=measurement.uid) }}" class="btn btn-primary">Перейти к отчету</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
-            <div class="col-sm-15">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
 
