@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 
 from frontend.config import config
 
-upload_url = f'{config.backend_url}/upload/'
+upload_url = f'{config.backend_url}/measurements/upload/'
 
 
 class FileForm(FlaskForm):
