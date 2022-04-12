@@ -1,7 +1,6 @@
 import httpx
 
-from frontend.config import config
-from frontend.client.schemas import Measurement
+from frontend.schemas import Measurement
 
 
 class MeasurementsClient:
@@ -22,6 +21,3 @@ class MeasurementsClient:
 
         payload = response.json()
         return Measurement(**payload)
-
-
-client = MeasurementsClient(url=config.backend_url)

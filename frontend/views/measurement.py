@@ -1,11 +1,16 @@
 from flask import Blueprint, render_template
 
-from frontend.client.measurements import client
+from frontend.client.api import client
 
 view = Blueprint('measurements', __name__)
 
 
 @view.route('/<uid>')
 def measurements(uid):
-    measurement = client.get_by_id(uid)
-    return render_template('measurements.html', measurement=measurement.dict())
+    measurement = client.measurements.get_by_id(uid)
+    trials = client.trials.get_for_measurement(uid)
+    return render_template(
+        'measurements.html',
+        measurement=measurement.dict(),
+        trials=[trial.dict() for trial in trials]
+    )

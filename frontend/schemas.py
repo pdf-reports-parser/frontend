@@ -9,3 +9,13 @@ class Measurement(BaseModel):
     project: str
     date: datetime
     responsible: str
+
+
+class Trial(BaseModel):
+    uid: int
+    name: str
+    status: str
+    unit: str
+    value: str
+    subject: str
+    measure_id: int

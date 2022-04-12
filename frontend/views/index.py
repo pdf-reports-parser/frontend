@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
 
-from frontend.client.measurements import client
+from frontend.client.api import client
 from frontend.forms.upload import FileForm
 
 view = Blueprint('index', __name__)
@@ -8,7 +8,7 @@ view = Blueprint('index', __name__)
 
 @view.route('/', methods=['GET', 'POST'])
 def index():
-    measurements = client.get_all()
+    measurements = client.measurements.get_all()
     form = FileForm(meta={'csrf': False})
 
     if form.validate_on_submit():
