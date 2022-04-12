@@ -9,5 +9,13 @@
         <li>Project - {{ measurement.project }}</li>
         <li>Date - {{ measurement.date }}</li>
         <li>Responsible - {{ measurement.responsible }}</li>
+        <h3>Trials:</h3>
+        {% for trial in trials%}
+            <h4>Trial {{ trial.name }}</h4>
+            <li>Status: {{ trial.status }}</li>
+            <li>Unit: {{ trial.unit }}</li>
+            <li>Value: {{ trial.value }}</li>
+            <li>Subject: {{ trial.subject }}</li>
+        {% endfor %}
     </body>
 </html>
