@@ -9,8 +9,10 @@ view = Blueprint('measurements', __name__)
 def measurements(uid):
     measurement = client.measurements.get_by_id(uid)
     trials = client.trials.get_for_measurement(uid)
+    title = f'Measurement {uid}'
     return render_template(
         'measurements.html',
+        page_title=title,
         measurement=measurement.dict(),
-        trials=[trial.dict() for trial in trials]
+        trials=[trial.dict() for trial in trials],
     )
