@@ -1,3 +1,4 @@
+from operator import itemgetter
 from flask import Blueprint, render_template
 
 from frontend.client.api import client
@@ -14,5 +15,5 @@ def measurements(uid):
         'measurements.html',
         page_title=title,
         measurement=measurement.dict(),
-        trials=[trial.dict() for trial in trials],
+        trials=sorted([trial.dict() for trial in trials], key=itemgetter('name')),
     )

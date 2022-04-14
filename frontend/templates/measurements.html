@@ -6,20 +6,36 @@
         <title>Measurement</title>
     </head>
     <body>
-        <h1>Detailed information about measurement</h1>
-        <h2>Measurement {{ measurement.uid }}</h2>
+        <h2>Detailed information about measurement {{ measurement.uid }}</h2>
         <li>Subject - {{ measurement.subject }}</li>
         <li>Project - {{ measurement.project }}</li>
         <li>Date - {{ measurement.date }}</li>
         <li>Responsible - {{ measurement.responsible }}</li>
         <h3>Trials:</h3>
-        {% for trial in trials%}
-            <h4>Trial {{ trial.name }}</h4>
-            <li>Status: {{ trial.status }}</li>
-            <li>Unit: {{ trial.unit }}</li>
-            <li>Value: {{ trial.value }}</li>
-            <li>Subject: {{ trial.subject }}</li>
-        {% endfor %}
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Value</th>
+                <th scope="col">Subject</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in range(trials | length) %}
+                    <tr>
+                        <th scope="row">{{  i + 1  }}</th>
+                        <td><h6>{{ trials[i].name }}</h6></td>
+                        <td>{{ trials[i].status }}</td>
+                        <td>{{ trials[i].unit }}</td>
+                        <td>{{ trials[i].value }}</td>
+                        <td>{{ trials[i].subject }}</td>
+                    </tr>            
+                {% endfor %}                
+              </tbody>
+            </table>
     </body>
 </html>
 {% endblock %}
