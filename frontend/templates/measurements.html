@@ -6,12 +6,23 @@
         <title>Measurement</title>
     </head>
     <body>
-        <h2>Detailed information about measurement {{ measurement.uid }}</h2>
-        <li>Subject - {{ measurement.subject }}</li>
-        <li>Project - {{ measurement.project }}</li>
-        <li>Date - {{ measurement.date }}</li>
-        <li>Responsible - {{ measurement.responsible }}</li>
-        <h3>Trials:</h3>
+        <p></p>
+        <div class="row" >
+            <div class="col-10" >
+                <h3>Detailed information about measurement {{ measurement.uid }}</h3>
+                <li>Subject - {{ measurement.subject }}</li>
+                <li>Project - {{ measurement.project }}</li>
+                <li>Date - {{ measurement.date }}</li>
+                <li>Responsible - {{ measurement.responsible }}</li>
+            </div>
+            <div class="col-2" >
+                <button onclick="window.print()" class="btn btn-outline-dark noprint">
+                    Print PDF Report
+                </button>
+            </div>
+        </div>
+        <p></p> 
+        <h4>Trials:</h4>
         <table class="table table-striped table-hover">
             <thead>
               <tr>
@@ -34,8 +45,8 @@
                         <td>{{ trials[i].subject }}</td>
                     </tr>            
                 {% endfor %}                
-              </tbody>
-            </table>
+            </tbody>
+        </table>
     </body>
 </html>
 {% endblock %}
