@@ -12,3 +12,5 @@ Usage:
 ```bash
 python -m frontend
 ```
+
+Deploy:
